@@ -2,3 +2,16 @@ os: linux
 dist: xenial
 language: java
 jdk: openjdk11
+
+#GITHUB_TOKEN
+
+env:
+  global:
+  - secure: v0IYlID1QyVUdaKRQA07a8rKS0c0GAkFZzo1l5qyY4jREHNhuqeWq27g1+asJsHHlMpsZXxr6AQWCzZMEa0VGDFtvm0QGVCNEJxl+7Fm7sY81jAvIY3ny11JyT37uQ8GiKDoDoODQ71hI5bTqym85ua9XLfsURpyU5vKY5qMGR+8PTQwZi3I23cuCYYj593lom6XyYsfiMwkKAEdopRp4aJqCHGuAxap6JEZnlV6zHAnWZd2a0Ue5XpGlPwTrjYPJZ/a/bMUR7d1RiEaJRwebVvPw1yW3N+3nzIC/DF1oQ11YXNVBgg2ORTk8rPsi4Ujsyofb1V/4MZ7AFV4T1UnKAw5tIJRTPNTkn7n91YQTcoe42LJRqICxUs+mieX06QLOXoUnzhx8H71GI7F5YC1m3vbXztAIKZZnn7DbS6+r85bnvDDixoZbov8LwfRWK+DW8wbCnPtf0xGL6Wf9jkRQB4qtXPzbTCFAZW6THhJkhrqJ6YaVUQ8g6RRJxEBUL7hNvPtWvICBFx6JSTHS+nBw+jgTZTiMoLBGSy9dMe2GuynUpi+rCffhH9MGRU945nv8J6UnF7wBw8zP91e1kJn5i3Rb08yjF/1lJBTqkzNlSAaThLJMdazK7/a3fDIbSDFLPndiP2Ha3vBuGbBOJvQgpm1M/Yc4bMrDJCXXhOoud8=
+
+after_success:
+
+    #UPDATE JAVADOC REPORT
+
+    - chmod u+x $HOME/build/xxcw/marketplace-webapp-client/scripts/javadocs.sh
+    - bash $HOME/build/xxcw/marketplace-webapp-client/scripts/javadocs.sh
