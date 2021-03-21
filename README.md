@@ -17,7 +17,7 @@ Some description #FR #FS
 #### Infrastructure
 - Travis CI (https://travis-ci.org/github/xxcw/marketplace-webapp-client)
 - Heroku (https://marketplace-webapp-client.herokuapp.com)
-- SonarCloud (https://sonarcloud.io/dashboard?id=org.explosiveworks%3Amarketplace-webapp-client)
+- SonarCloud (https://sonarcloud.io/dashboard?id=org.explosiveworks:marketplace-webapp-client)
 - Telegram (https://t.me/travis_client_reports, https://t.me/travis_pro_bot)
 
 ![](https://raw.githubusercontent.com/xxcw/marketplace-webapp-client/master/.github/images/infrastructure.jpg)
