@@ -16,6 +16,21 @@ deploy:
   api_key:
     secure: "AZXnjslOeUOD1dPOTkkjwPUdwqberr9WqvfY0STFtsBPlXhrEZBC0JoBbR6xJLaOCC4ZS910heb2gQctTXj4Ot6UQCf9Djepfb6X8Tqvv+Pv3pw9UoV4QNoBIXeRkZCfUbSG8rE2Ry4XUWvSr37gZ6V2Fz8sOz+CnCKTBhm0+78qqLqSMJV7GUW+ds6M0pQb1KrvuWML724cwMVy6zfbiLapqAu8LkvUGcoh6THZcMdvJQUKNHz+uYewVxqvooCdPS8dINsmd2uJqzgMub8SsAcHQMmPYizZ89WrS1Tq8Bxg+4ljr3J6SXLK9Bo3UFJeqQj4KrRAR5iEzU5oAln53EWL3ZnD6rrclGU5U9Yg+cN8tSdv9m8rxStQf6QzKwDlopY+ZT5pLi5Ed/afeCUu/0v8Iy+kN4s6SzeNz5LC/5jzr01U+VHFkGenGDEz3KcO0AP1ftLSOcfRDl7179FrUgOUd5JURMvr3zrrki2CuhRJcIV8eL9XRsYcjpols74MtlvsBAI3fExQgImVK4xUmA301B0BKdAlgTItHHsEHndJnTBG0r5u2Ve3Cksnf2n+JXmJT+gnAk5AYACKNxllc4imsUizuoewLzpGiKMJCIUgEDyUuDtDH+wzCLD4BfsU9bjELU71n4fshllMiCFhp5WBDNAHlhRlhnrHCU68ADk="
 
+#SONARCLOUD
+
+addons:
+  sonarcloud:
+    organization: "xxcw"
+    token:
+	  secure: "CpTHhEjsoAdmDhmWziKt5KABumQkIZ6fFn9lxZ5llJrSi1PgQv2XcFpAdWRZHuSZt0jXRufUow1Zt0Q4ncJgIqXBG/d2LwgtbJyVv2ONB+F6qypFq3KfaBtog46d/igzUqXlQve/4eNDbW1X6f8SeVx6GAyd9TWg3I1WbAI/8dKOGOD+HzBr5uWvl2/DR3PXhJlWuPencCcDhEA37iOgYlvKpU5GaexyGEn9wH2HWOhihi+X2ElWJSFq7cHAShltihDNKlOLkmaIrcBPaqg7gVLKdy+bOBvm04ewkp4T6Uz7XBOcn0ONZMogmmbkPn3SIxX0gHJ+AmOoFaEsrZhZfdJCWNNE1jFRrasbEB66NitEenYoE+CBnD18DLnBYOaU21E1eJnI6N12ZqBojKWt1Ac2PfwvgnO4Vdvx7F0aPqLq3laIOfQAvK0K4yqqfw8RvsZIdLbr22Ie8iSaMK3gOmlXoaqWcGgrHy1w2GV8IEzbP7XIM57jcLPJZk8T28SwJF4CanP3YYuFXkUZ1h9e6tdktZeYMxoHBvorM++idYeZr3yD2K4hf+DzAYq7yAogXglJUJXQ0ZqStGf5AglURsp8XkYGbw8jB02/HQ4JixEIaKdjyHDjIz9n8PIsD6YnNRkNj7FfqG+l3hcHYkQLYcOXUwbcNL9xmnolDKa9x3g="
+script:
+    - mvn clean verify sonar:sonar -Pcoverage -X
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+
 after_success:
 
     #UPDATE JAVADOC REPORT
