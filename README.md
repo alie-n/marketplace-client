@@ -5,7 +5,8 @@
 
 ## Marketplace webapp client
 
-Some description #FR #FS
+Functionality: get http request and send response with data from marketplace app.
+https://github.com/xxcw/marketplace
 
 #### Tech stack
 - Java 8
